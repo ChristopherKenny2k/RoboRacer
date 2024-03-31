@@ -4,10 +4,11 @@ RoboRacer is a collaborative deep learning project aimed at developing a model f
 The training dataset consists of 1192 reference photos taken by the camera on the remote control car.
 
 By using the PyTorch machine learning library in python we trained three models on the performance of this dataset. 
+The goal of the our models is to accurately predict the X and Y coordinates for the racing line when given the input image. Depending on the predicted XY coordinates, the car will then respond with accelerating, decelerating and turning left or right, to follow the track. The track has two blue lines on either side of the 'road' and objets placed randomly throughout the course.
 
 ## Model 1: Simple Convolutional Neural Network 
 The CNN class defines a convolutional neural network architecture using PyTorch for image
-classification. The goal of the CNN is to accurately predict the X and Y coordinates for the racing line when given the input image.
+classification.
 
 ### Model Architecture
   - Convolutional Layers: Two convolutional layers with ReLU activation.
