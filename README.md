@@ -13,7 +13,7 @@ classification. The goal of the CNN is to accurately predict the X and Y coordin
   - Convolutional Layers: Two convolutional layers with ReLU activation.
   - Pooling Layers: Max pooling with a 2x2 kernel.
   - Fully Connected Layers: Two fully connected layers for classification.
-  - Perofrmance: Our simple CNN yielded a well balanced validation loss and training loss.
+  - Performance: Our simple CNN yielded a well balanced validation loss and training loss.
                  Training loss - 0.0017
                  Validation loss - 0.002
 
@@ -21,11 +21,20 @@ classification. The goal of the CNN is to accurately predict the X and Y coordin
 
 ## Model 2: Transfer Learning (pre-trained CNN model)
   - Pre-Trained Model: We decided to use the ResNet18 model as our pre-trained model. Initially we chose the ResNet50 model, however, this model was heavily     
-    overfit on our training data. The weights of the pre-trained model were frozen to prevent them fro mbeing updated during training.
+    overfit on our training data. The weights of the pre-trained model were frozen to prevent them from being updated during training.
   - ResNet18: ResNet18 is a convolutional neural network architecture introduced by Microsoft Research, consisting of 18 layers, primarily known for its 
     effectiveness in image classification tasks.
-  - Dropout Rate: We used a dropout rate of 0.35 to handle some overfitting that was occuring with the ResNet18 model.
-  - Performance: In comparison to our simple CNN, the loss values of the ResNet18 model fluctuated heavily.
+  - Dropout Rate: We used a dropout rate of 0.35 to handle some overfitting that was present with the ResNet18 model.
+  - Performance: In comparison to our simple CNN, the loss values of the ResNet18 model exhibited fluctuating performance.
 
-## Model 2: Transfer Learning (pre-trained CNN model)
+## Model 3: Simple CNN with Data Augmentation
+  - Our simple CNN showed more consistent results so we decided to apply this model to our augmented dataset.
+  - The following data augmentations were applied to our initial training dataset
+        - RandomHorizontalFlip (correctly adjusted XY annotations)
+        - ColorJitter (brightness, contrast, saturation, hue)
+        - GuassianBlur (Kernel_size = 3)
+
+## Further Notes
+  - Weights and Biases were used to log and monitor the performance of our models over each run
+  - The cuda library was used to dedicate the work to the GPU in order to reduce running time for our models
 
